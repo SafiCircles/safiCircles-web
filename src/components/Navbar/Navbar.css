@@ -1,0 +1,85 @@
+/* MAIN NAVBAR */
+.navbar {
+  width: 100%;
+  height: 80px;
+  padding: 0 60px;
+
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+
+  background: linear-gradient(
+    90deg,
+    #050013,
+    #090020,
+    #0b002a
+  );
+
+  color: white;
+}
+
+/* LOGO SECTION */
+.logo-div {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.logo-div img {
+  width: 36px;
+  height: 36px;
+}
+
+.logo-div h2 {
+  font-size: 20px;
+  font-weight: 600;
+  color: white;
+}
+
+/* NAV LINKS */
+.nav-links {
+  display: flex;
+  gap: 32px;
+}
+
+.nav-links a {
+  text-decoration: none;
+  color: #dcdcdc;
+  font-size: 15px;
+  font-weight: 500;
+  transition: color 0.3s ease;
+}
+
+.nav-links a:hover {
+  color: #ffffff;
+}
+
+/* BUTTON SECTION */
+.button-div {
+  display: flex;
+  align-items: center;
+}
+
+/* DOWNLOAD BUTTON */
+.download-button {
+  padding: 10px 22px;
+
+  background: transparent;
+  color: white;
+
+  border: 1px solid #4f46e5;
+  border-radius: 30px;
+
+  font-size: 14px;
+  font-weight: 500;
+  cursor: pointer;
+
+  transition: all 0.3s ease;
+}
+
+/* Button glow effect */
+.download-button:hover {
+  background: #4f46e5;
+  box-shadow: 0 0 15px rgba(79, 70, 229, 0.7);
+}
+

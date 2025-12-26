@@ -1,0 +1,29 @@
+.homepage {
+  position: relative;
+  min-height: 100vh;
+}
+
+.homepage::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  z-index: 0;
+
+  background:
+    linear-gradient(to bottom, #0c0d3b, #04011c),
+    repeating-linear-gradient(
+      to right,
+      transparent,
+      transparent 45px,
+      rgba(12, 13, 59, 0.9) 46px,
+      rgba(12, 13, 59, 0.9) 48px
+    );
+
+  background-blend-mode: multiply;
+  pointer-events: none;
+}
+
+.content {
+  position: relative;
+  z-index: 1;
+}
