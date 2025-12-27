@@ -5,27 +5,25 @@ import { image } from "../../constants/images";
 function Hero() {
   return (
     <section className="hero">
-      {/* Pre title */}
+  
       <div className="pre-title">
         <p>
           Plan, Save, Strive with <span>SafiCircles</span>
         </p>
       </div>
 
-      {/* Main title */}
       <h1 className="hero-title">
         Turn Contributions <br />
         Into An Empowerment
       </h1>
 
-      {/* CTA button */}
       <button className="hero-btn">
         Join Your Circle <span>→</span>
       </button>
 
-      {/* Cards */}
+
       <div className="hero-cards">
-        {/* Card 1 */}
+      
         <div className="card left-card">
           <h3>Your Circle Savings</h3>
           <p>okkk</p>
@@ -40,19 +38,21 @@ function Hero() {
           </div>
         </div>
 
-        {/* Card 2 */}
         <div className="card middle-card">
           <span className="badge">Digital IKIBINA System</span>
           <h3>
             Tracking <span>100+</span> Contributions In Real Time
           </h3>
+          <div>
+            <div className="circle"></div>
+            <p>Current contributions show this group is ready for a fixed asset investment</p>
+          </div>
           <img
             src={image.hands}
             alt="community"
           />
         </div>
 
-        {/* Card 3 */}
         <div className="card dark">
           <span className="badge">Best Saving Plan</span>
           <h3>

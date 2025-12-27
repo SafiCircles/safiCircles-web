@@ -110,12 +110,16 @@
 
 
 .middle-card {
-  background: #f3f8ff;
+  background: #E6F3FD;
   color: #0a0a0a;
+}
+.middle-card h3{
+  font-size: 24px;
 }
 
 .middle-card h3 span {
   color: #1c6bff;
+  font-size: 24px;
 }
 
 .middle-card img {
