@@ -1,6 +1,7 @@
 .homepage {
   position: relative;
   min-height: 100vh;
+  
 }
 
 .homepage::before {
@@ -21,6 +22,8 @@
 
   background-blend-mode: multiply;
   pointer-events: none;
+
+  
 }
 
 .content {

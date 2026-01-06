@@ -3,6 +3,7 @@ import './Home.css'
 import Navbar from '../components/Navbar/Navbar'
 import Hero from '../components/Hero/Hero'
 import Features from '../components/Card/Features'
+import Clip from '../components/clip/clip'
 
 
 function Home() {
@@ -11,6 +12,7 @@ function Home() {
       <div className="content">
         <Navbar />
         <Hero />
+        <Clip />
          <Features />
       </div>
      
