@@ -87,3 +87,16 @@
 .features-grid img{
     height: 32px;
 }
+
+@media screen and (max-width: 1024px) {
+.features-grid {
+  grid-template-columns: repeat(2, 1fr);
+
+}
+}
+
+@media screen and (max-width: 568px) {
+  .features-grid {
+    grid-template-columns: 1fr;
+  }
+}

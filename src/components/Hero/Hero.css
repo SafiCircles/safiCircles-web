@@ -74,9 +74,9 @@
 
 .left-card {
   background: #eaf4ff;
-  padding: 25px;
+  padding: 28px;
   border-radius: 20px;
-  line-height: 1.9;
+  line-height: 1.6;
   text-align: start;
   max-height: 250px;
 
@@ -84,7 +84,8 @@
 }
 .left-card p{
     color: #4C4C4C;
-    font-size: 14px;
+    font-size: 12px;
+    
 }
 .left-card h3{
     color: #003764;
@@ -102,11 +103,12 @@
 }
 .sub-div h4{
     color: #1997FF;
+
 }
 .color{
     background-color: #1997FF;
-    height: 32px;
-    width: 32px;
+    height: 35px;
+    width: 40px;
     border-radius: 50%;
     margin: 5px;
 }
@@ -173,3 +175,11 @@
   vertical-align: top;
   margin-right: 12px;
 }
+@media screen and (max-width: 768px) {
+  .hero-cards{
+    display: none;
+  }
+}
+
+
+

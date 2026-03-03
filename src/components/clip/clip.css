@@ -5,3 +5,13 @@
   text-align: center;
   clip-path: polygon(35% 15%, 64% 15%, 82% 98%, 100% 98%, 100% 100%, 50% 100%, 22% 100%, 0 100%, 0 98%, 16% 98%);
 }
+@media screen and (max-width: 720px) {
+  .clip{
+    height: 190px;
+  }
+}
+/* @media screen and (max-width: 720px) {
+  .clip{
+    height: 190px;
+  }
+} */

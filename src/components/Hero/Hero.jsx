@@ -26,14 +26,14 @@ function Hero() {
       
         <div className="card left-card">
           <h3>Your Circle Savings</h3>
-          <p>okkk</p>
+          <p>Last Update</p>
           <h1>1,200,000 Rwf</h1>
           <p>Total Saved</p>
           <div className="sub-div">
             <div className="color"></div>
             <div>
-                <h5>Ungrrrrrrr</h5>
-                <h4>ookkkkkk</h4>
+                <h5>Next Asset Milestone</h5>
+                <h4>Eligible for a shared asset purchase</h4>
             </div>
           </div>
         </div>
