@@ -2,9 +2,12 @@ import React from "react";
 import FeatureCard from "./FeatureCard";
 import "./Features.css";
 import { image } from "../../constants/images";
+import HowSafiCirclesWorks from "../HowItWorks/HowSafiCirclesWorks";
+import ProSection from "../ProSection/ProSection";
 
 function Features() {
   return (
+    <>
     <section className="features">
       <h2>
         Building Trust, One <br />
@@ -67,7 +70,11 @@ function Features() {
           icon={<span><img src={image.ai}></img></span>}
         />
       </div>
+      <HowSafiCirclesWorks />
+      
     </section>
+    <ProSection />
+    </>
   );
 }
 

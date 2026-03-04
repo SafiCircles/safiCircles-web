@@ -1,0 +1,228 @@
+@import url('https://fonts.googleapis.com/css2?family=Inria+Serif:wght@400;700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Keania+One&display=swap');
+
+/* SECTION BACKGROUND */
+.pro-section {
+  background-color: #02022c;
+  padding: 100px 20px;
+  font-family: 'Inria Serif', serif;
+  color: #fff;
+}
+
+.pro-container {
+  max-width: 1200px;
+  margin: 0 auto;
+  text-align: center;
+  position: relative;
+}
+
+/* HEADER */
+.pro-label {
+  letter-spacing: 3px;
+  font-size: 14px;
+  opacity: 0.8;
+  margin-bottom: 20px;
+}
+
+.pro-header h1 {
+  font-family: 'Keania One', cursive;
+  font-size: 56px;
+  line-height: 1.2;
+  margin-bottom: 20px;
+}
+
+.pro-subtitle {
+  font-size: 18px;
+  opacity: 0.8;
+  margin-bottom: 50px;
+}
+
+/* TOGGLE */
+.pricing-toggle {
+  display: inline-flex;
+  align-items: center;
+  background: #0c1440;
+  border-radius: 40px;
+  padding: 10px 20px;
+  gap: 30px;
+  margin-bottom: 80px;
+}
+
+.pricing-toggle span {
+  cursor: pointer;
+  opacity: 0.7;
+}
+
+.pricing-toggle .active {
+  background: #050537;
+  padding: 10px 30px;
+  border-radius: 30px;
+  opacity: 1;
+}
+
+.save-badge {
+  background: #e6e6e6;
+  color: #000;
+  padding: 8px 15px;
+  border-radius: 20px;
+  font-size: 14px;
+}
+
+/* CARDS */
+.pricing-cards {
+  display: flex;
+  justify-content: center;
+  gap: 40px;
+}
+
+/* Base Card */
+.card {
+  width: 420px;
+  padding: 80px 40px;
+  border-radius: 25px;
+  position: relative;
+  text-align: left;
+  overflow: hidden;
+}
+
+/* Starter */
+.starter {
+  background: #4a6fa9;
+  color: #fff;
+  /* z-index: 1; */
+  text-align: center;
+  
+}
+
+/* Community */
+.community {
+  background: #0f1a4f;
+  color: #fff;
+  text-align: center;
+  
+}
+.community p {
+    z-index: 2;
+}
+
+/* Glow Circles */
+.glow-circle {
+  position: absolute;
+  width: 70px;
+  height: 70px;
+  border-radius: 50%;
+  background: #2b4ca2;
+  box-shadow: 5px 2px 40px 30px #000;
+  z-index: 1;
+}
+
+.glow-circle.left {
+  top: 40px;
+  left: 40px;
+}
+
+.glow-circle.right {
+  top: 40px;
+  right: 40px;
+}
+
+/* Text Styles */
+.card h3 {
+  font-size: 22px;
+  margin-top: 40px;
+}
+
+.card-sub {
+  font-size: 14px;
+  opacity: 0.8;
+  margin-bottom: 20px;
+  z-index: 2;
+}
+
+.price {
+  font-size: 50px;
+  margin-bottom: 20px;
+}
+
+.free {
+  letter-spacing: 3px;
+}
+
+/* Popular */
+.popular {
+  font-size: 12px;
+  letter-spacing: 2px;
+  margin: 10px 0;
+  font-weight: bold;
+}
+
+/* List */
+.card ul {
+  list-style: none;
+  padding: 0;
+  margin-top: 20px;
+}
+
+.card ul li {
+  margin-bottom: 10px;
+  font-size: 15px;
+  text-align: left;
+}
+
+/* Button */
+.card-btn {
+  margin-top: 40px;
+  width: 100%;
+  height: 45px;
+  border-radius: 25px;
+  border: none;
+  background: #2c3f7c;
+}
+
+.card-btn.light {
+  background: #4f7ec3;
+}
+.circle-1 {
+  position: absolute;
+  right: -200px;          /* aligns near community card */
+  top: 400px;           /* adjust slightly if needed */
+  width: 500px;
+  height: 500px;
+  border: 15px solid #02022c;
+  border-radius: 50%;
+  z-index: 0;           /* behind cards */
+  /* opacity: 0.7; */
+}
+.circle-2 {
+  position: absolute;
+  left: 320px;          /* aligns near starter card */
+  top: 200px;           /* adjust slightly if needed */
+  width: 500px;
+  height: 350px;
+  border: 15px solid #02022c;
+  border-radius: 50%;
+  z-index: 0;           /* behind cards */
+  /* opacity: 0.7; */
+}
+.circle-3{
+    position: absolute;
+    left: -70px;
+    top: 160px;
+    width: 500px;
+    height: 350px;
+    border: 15px solid #02022c;
+    border-radius: 50%;
+    z-index: 0;
+    /* opacity: 0.7; */
+}
+.circle-4{
+    position: absolute;
+    left: -150px;
+    top: 900px;
+    width: 500px;
+    height: 500px;
+    border: 15px solid #02022c;
+    border-radius: 50%;
+    z-index: 0;
+    /* opacity: 0.7; */
+}
