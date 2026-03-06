@@ -11,6 +11,8 @@ import ussd from '../../images/ussd.png'
 import safiLogo from '../../images/safiLogo.png'
 import Footprints from '../../images/footprints.png'
 import Arrow from '../../images/arrow.png'
+import Union from '../../images/union.png'
+import PeopleOnCircle from '../../images/peopleOnCircle.png'
 
 export const image = {
     ai,
@@ -23,6 +25,8 @@ export const image = {
     notification,
     offline,
     pair,
+    Union,
+    PeopleOnCircle,
     timer,
     ussd,
     safiLogo

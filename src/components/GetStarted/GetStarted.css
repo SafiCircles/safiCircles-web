@@ -1,0 +1,203 @@
+@import url('https://fonts.googleapis.com/css2?family=Imprima&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Kavivanar&display=swap');
+.get-started-section {
+    background-color: #eaf6ff;
+    padding: 0px 50px 100px;
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    overflow: hidden;
+    font-family: Arial, sans-serif;
+}
+
+/* Inverted half hexagon matching ProSection */
+.top-half-hexagon {
+    width: 700px;
+    height: 150px;
+    background-color: #02022c;
+    clip-path: polygon(0% 0%, 100% 0%, 75% 100%, 25% 100%);
+    margin: 0 auto 50px;
+    top: -2px;
+}
+
+.get-started-content {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    max-width: 1200px;
+    margin: 0 auto;
+    width: 100%;
+    gap: 40px;
+}
+
+/* Left Side Styles */
+.get-started-text {
+    flex: 1;
+    max-width: 500px;
+}
+
+.circle-logo-icon {
+    width: 120px;
+    height: 120px;
+    margin-bottom: 40px;
+}
+
+.circle-logo-icon img {
+    width: 100%;
+    height: auto;
+    object-fit: contain;
+}
+
+.get-started-title {
+    font-family: 'Imprima', sans-serif;
+    font-size: 48px;
+    color: #0b1b4b;
+    line-height: 1.2;
+    margin-bottom: 24px;
+    font-weight: 400;
+}
+
+.cursive-text {
+    font-family: 'Brush Script MT', 'Dancing Script', cursive;
+    color: #2b4ca2;
+    font-style: italic;
+    font-size: 56px;
+    font-weight: 500;
+}
+
+.get-started-subtitle {
+    font-family: 'Imprima', sans-serif;
+    font-size: 16px;
+    color: #7b8fa3;
+    line-height: 1.6;
+    margin-bottom: 40px;
+}
+
+.cta-wrapper {
+    position: relative;
+    display: inline-block;
+}
+
+.btn-get-started {
+    background-color: transparent;
+    border: 1px solid #5a6c8c;
+    color: #0b1b4b;
+    font-family: 'Keania One', cursive;
+    font-size: 16px;
+    padding: 12px 32px;
+    border-radius: 30px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+.btn-get-started:hover {
+    background-color: #0b1b4b;
+    color: white;
+}
+
+.help-text-box {
+    position: absolute;
+    top: 60px;
+    left: 20px;
+    display: flex;
+    align-items: flex-start;
+    gap: 10px;
+}
+
+.arrow-icon {
+    width: 40px;
+    height: 40px;
+    opacity: 0.5;
+    transform: rotate(-10deg);
+}
+
+.help-text {
+    font-family: 'Kavivanar', cursive;
+    color: #a0b2c6;
+    font-size: 16px;
+    white-space: nowrap;
+    margin-top: 25px;
+}
+
+/* Right Side Styles */
+.get-started-image-container {
+    flex: 1;
+    display: flex;
+    justify-content: flex-end;
+}
+
+.image-wrapper {
+    position: relative;
+    width: 100%;
+    max-width: 550px;
+    height: 550px;
+    /* Custom clip-path based on the image provided: curved polygon matching the image */
+    clip-path: polygon(50% 0%, 100% 0, 100% 35%, 100% 70%, 100% 100%, 50% 100%, 0 100%, 0% 70%, 0 21%, 24% 21%);
+    border-radius: 20px;
+    overflow: hidden;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+}
+
+.image-wrapper img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.image-slider-indicator {
+    position: absolute;
+    bottom: 25px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 80px;
+    height: 12px;
+    background-color: rgba(255, 255, 255, 0.4);
+    border-radius: 10px;
+    overflow: hidden;
+}
+
+.slider-thumb {
+    width: 40%;
+    height: 100%;
+    background-color: #02022c;
+    border-radius: 10px;
+}
+
+/* Responsive */
+@media screen and (max-width: 1024px) {
+    .get-started-content {
+        flex-direction: column;
+        text-align: center;
+    }
+
+    .get-started-text {
+        align-items: center;
+        display: flex;
+        flex-direction: column;
+    }
+
+    .help-text-box {
+        left: 50%;
+        transform: translateX(-50%);
+    }
+
+    .top-half-hexagon {
+        width: 300px;
+        height: 60px;
+    }
+}
+
+@media screen and (max-width: 600px) {
+    .get-started-title {
+        font-size: 36px;
+    }
+
+    .cursive-text {
+        font-size: 42px;
+    }
+
+    .image-wrapper {
+        height: 400px;
+        clip-path: polygon(0% 10%, 100% 0%, 100% 100%, 0% 100%);
+    }
+}

@@ -1,14 +1,31 @@
 // ProSection.jsx
 import React from "react";
 import "./ProSection.css";
+import { motion } from "framer-motion";
 
 const ProSection = () => {
-  return (
-    <section className="pro-section">
-      <div className="pro-container">
+  const cardVariantsLeft = {
+    hidden: { opacity: 0, x: -50 },
+    visible: { opacity: 1, x: 0, transition: { duration: 0.6, ease: "easeOut" } },
+  };
 
+  const cardVariantsRight = {
+    hidden: { opacity: 0, x: 50 },
+    visible: { opacity: 1, x: 0, transition: { duration: 0.6, ease: "easeOut" } },
+  };
+
+  return (
+    <section className="pro-section" id="pricing">
+      <div className="top-hexagon"></div>
+      <div className="pro-container">
         {/* Header */}
-        <div className="pro-header">
+        <motion.div
+          className="pro-header"
+          initial={{ opacity: 0, y: 20 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true }}
+          transition={{ duration: 0.6 }}
+        >
           <p className="pro-label">PRO ACCESS</p>
           <h1>
             Get unlimited features <br />
@@ -18,24 +35,35 @@ const ProSection = () => {
             Unlimited access to SafiCircles features with <br />
             a single membership
           </p>
-        </div>
+        </motion.div>
 
         {/* Toggle */}
-        <div className="pricing-toggle">
+        <motion.div
+          className="pricing-toggle"
+          initial={{ opacity: 0, y: 10 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true }}
+          transition={{ duration: 0.5, delay: 0.2 }}
+        >
           <span>Month</span>
           <span className="active">Quarter</span>
           <span>Year</span>
           <span className="save-badge">Save 84%</span>
-        </div>
+        </motion.div>
 
         {/* Cards */}
         <div className="pricing-cards">
-
           {/* Starter */}
-          <div className="card starter">
+          <motion.div
+            className="card-pro starter"
+            variants={cardVariantsLeft}
+            initial="hidden"
+            whileInView="visible"
+            viewport={{ once: true }}
+          >
             <div className="glow-circle left"></div>
             <h3>Starter</h3>
-            <p className="card-sub">For small private circles</p>
+            <p className="card-pro-sub">For small private circles</p>
             <h2 className="price free">FREE</h2>
 
             <ul>
@@ -47,16 +75,20 @@ const ProSection = () => {
               <li>✓ Free to use</li>
             </ul>
 
-            <button className="card-btn"></button>
-          </div>
+            <button className="card-pro-btn">GET STARTED</button>
+          </motion.div>
 
           {/* Community */}
-          <div className="card community">
+          <motion.div
+            className="card-pro community"
+            variants={cardVariantsRight}
+            initial="hidden"
+            whileInView="visible"
+            viewport={{ once: true }}
+          >
             <div className="glow-circle right"></div>
             <h3>Community</h3>
-            <p className="card-sub">
-              For growing groups and cooperatives
-            </p>
+            <p className="card-pro-sub">For growing groups and cooperatives</p>
             <p className="popular">MOST POPULAR</p>
             <h2 className="price">$20</h2>
 
@@ -69,17 +101,13 @@ const ProSection = () => {
               <li>✓ Priority support</li>
             </ul>
 
-            <button className="card-btn light">Upgrade</button>
-            
-          </div>
-         
-
+            <button className="card-pro-btn light">SUBSCRIBE</button>
+          </motion.div>
         </div>
         <div className="circle-1"></div>
         <div className="circle-2"></div>
         <div className="circle-3"></div>
         <div className="circle-4"></div>
-
       </div>
     </section>
   );

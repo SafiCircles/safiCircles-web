@@ -2,6 +2,7 @@
   background: #eaf6ff;
   height: 200px;
   padding-top: 0px;
+  z-index: 0;
   text-align: center;
   clip-path: polygon(35% 15%, 64% 15%, 82% 98%, 100% 98%, 100% 100%, 50% 100%, 22% 100%, 0 100%, 0 98%, 16% 98%);
 }
@@ -15,3 +16,4 @@
     height: 190px;
   }
 } */
+ 

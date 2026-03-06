@@ -38,19 +38,19 @@ function Navbar() {
 
       <div className={`nav-right ${menuOpen ? 'open' : ''}`} id={navId}>
         <div className="nav-links">
-          <Link to="/" onClick={() => setMenuOpen(false)}>
+          <Link to="/#home" onClick={() => setMenuOpen(false)}>
             Home
           </Link>
-          <Link to="/features" onClick={() => setMenuOpen(false)}>
+          <Link to="/#features" onClick={() => setMenuOpen(false)}>
             Features
           </Link>
-          <Link to="/how-it-works" onClick={() => setMenuOpen(false)}>
+          <Link to="/#how-it-works" onClick={() => setMenuOpen(false)}>
             How it works
           </Link>
-          <Link to="/pricing" onClick={() => setMenuOpen(false)}>
+          <Link to="/#pricing" onClick={() => setMenuOpen(false)}>
             Plans/Pricing
           </Link>
-          <Link to="/contacts" onClick={() => setMenuOpen(false)}>
+          <Link to="/#contacts" onClick={() => setMenuOpen(false)}>
             Contacts
           </Link>
         </div>
