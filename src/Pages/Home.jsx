@@ -22,7 +22,7 @@ function Home() {
       const hash = window.location.hash;
       if (hash) {
         gsap.to(window, {
-          scrollTo: hash,
+          scrollTo: { y: hash, offsetY: 80 },
           duration: 1,
           ease: "power2.inOut",
         });

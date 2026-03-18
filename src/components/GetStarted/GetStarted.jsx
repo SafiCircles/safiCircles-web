@@ -33,7 +33,12 @@ const GetStarted = () => {
           </p>
 
           <div className="cta-wrapper">
-            <button className="btn-get-started">Get Started</button>
+            <button 
+              className="btn-get-started"
+              onClick={() => window.location.href = '/signup'}
+            >
+              Get Started
+            </button>
             <div className="help-text-box">
               <img src={image.Arrow} alt="Arrow pointing to button" className="arrow-icon" />
               <span className="help-text">Help! Click me n gain</span>
