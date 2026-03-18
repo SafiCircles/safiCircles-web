@@ -9,7 +9,7 @@ import offline from '@/images/offline.png';
 import pair from '@/images/pair.png';
 import timer from '@/images/timer.png';
 import ussd from '@/images/ussd.png';
-import safiLogo from '@/images/safiLogo.png';
+// import safiLogo from '@/images/safiLogo.png';
 import Footprints from '@/images/footprints.png';
 import Arrow from '@/images/arrow.png';
 import Union from '@/images/union.png';
@@ -30,5 +30,5 @@ export const image = {
   PeopleOnCircle,
   timer,
   ussd,
-  safiLogo
+//   safiLogo
 };
