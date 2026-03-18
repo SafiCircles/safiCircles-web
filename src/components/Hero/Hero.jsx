@@ -68,6 +68,7 @@ function Hero() {
         transition={{ duration: 0.6, delay: 0.8 }}
         whileHover={{ scale: 1.05 }}
         whileTap={{ scale: 0.95 }}
+        onClick={() => window.location.href = '/signup'}
       >
         Join Your Circle <span>→</span>
       </motion.button>

@@ -1,19 +1,22 @@
 import { Routes, Route } from 'react-router-dom'
 
 import Home from './Pages/Home'
-import Features from './components/Card/Features'
-import HowSafiCirclesWorks from './components/HowItWorks/HowSafiCirclesWorks'
-import ProSection from './components/ProSection/ProSection'
-import GetStarted from './components/GetStarted/GetStarted' 
+import Login from './Pages/Auth/Login'
+import SignUp from './Pages/Auth/SignUp'
+import OTP from './Pages/Auth/OTP'
+import Onboarding from './Pages/Onboarding/Onboarding'
+import Dashboard from './Pages/Dashboard/Dashboard'
+
 function App() {
   return (
     <>
       <Routes>
         <Route path="/" element={<Home />} />
-        <Route path="/features" element={<Features />} />
-        <Route path="/pricing" element={<ProSection />} />
-        <Route path="/how-it-works" element={<HowSafiCirclesWorks />} />
-        <Route path="/contacts" element={<GetStarted />} />
+        <Route path="/login" element={<Login />} />
+        <Route path="/signup" element={<SignUp />} />
+        <Route path="/verify" element={<OTP />} />
+        <Route path="/onboarding" element={<Onboarding />} />
+        <Route path="/dashboard" element={<Dashboard />} />
       </Routes>
     </>
   )

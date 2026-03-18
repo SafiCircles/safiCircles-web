@@ -75,7 +75,12 @@ const ProSection = () => {
               <li>✓ Free to use</li>
             </ul>
 
-            <button className="card-pro-btn">GET STARTED</button>
+            <button 
+              className="card-pro-btn"
+              onClick={() => window.location.href = '/signup'}
+            >
+              GET STARTED
+            </button>
           </motion.div>
 
           {/* Community */}
@@ -101,7 +106,12 @@ const ProSection = () => {
               <li>✓ Priority support</li>
             </ul>
 
-            <button className="card-pro-btn light">SUBSCRIBE</button>
+            <button 
+              className="card-pro-btn light"
+              onClick={() => window.location.href = '/signup'}
+            >
+              SUBSCRIBE
+            </button>
           </motion.div>
         </div>
         <div className="circle-1"></div>

@@ -8,7 +8,7 @@ import ProSection from "../ProSection/ProSection";
 function Features() {
   return (
     <>
-    <section className="features">
+    <section className="features" id="features">
       <h2>
         Building Trust, One <br />
         Contribution at a Time

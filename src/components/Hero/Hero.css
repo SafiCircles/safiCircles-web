@@ -84,7 +84,8 @@
   border-radius: 20px;
   line-height: 1.6;
   text-align: start;
-  max-height: 250px;
+  max-height: 300px;
+  max-width: 300px;
 
 
 }
@@ -164,7 +165,7 @@
   line-height: 1.2;
   font-weight: 400;
   color: #1a1a1a;
-  margin:  0;
+  margin: 0;
 }
 
 .progress-section {

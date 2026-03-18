@@ -1,21 +1,20 @@
-
-*{
+* {
   @import url('https://fonts.googleapis.com/css2?family=Inria+Serif:wght@400;700&display=swap');
-    padding: 0;
-    margin: 0;
-    box-sizing: border-box;
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
 
 }
 
 html,
 body {
   width: 100%;
-  /* overflow-x: hidden; */
+  overflow-x: hidden;
 }
 
 #root {
   width: 100%;
-  /* overflow-x: hidden; */
+  overflow-x: hidden;
 }
 
 img,
@@ -23,4 +22,13 @@ svg,
 video,
 canvas {
   max-width: 100%;
+}
+
+section,
+[id] {
+  scroll-margin-top: 80px;
+}
+
+html {
+  scroll-behavior: smooth;
 }
