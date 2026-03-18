@@ -1,6 +1,6 @@
 // ProSection.jsx
 import React from "react";
-import "./ProSection.css";
+import "./Prosection.css";
 import { motion } from "framer-motion";
 
 const ProSection = () => {
