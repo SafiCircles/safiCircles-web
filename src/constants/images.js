@@ -9,7 +9,7 @@ import offline from '@/images/offline.png';
 import pair from '@/images/pair.png';
 import timer from '@/images/timer.png';
 import ussd from '@/images/ussd.png';
-import safiLogo from '../../public/safiLogo.png';
+import safiLogo from '@/images/SafiLogo.png';
 import Footprints from '@/images/footprints.png';
 import Arrow from '@/images/arrow.png';
 import Union from '@/images/union.png';
