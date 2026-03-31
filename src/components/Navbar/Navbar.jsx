@@ -1,11 +1,28 @@
-import { useEffect, useId, useState } from 'react'
+import { useEffect, useId, useState, useRef } from 'react'
 import { Link } from 'react-router-dom'
+import { AiOutlineHome } from 'react-icons/ai'
+import { FiSearch } from 'react-icons/fi'
+import { HiOutlineUser, HiOutlineShoppingCart } from 'react-icons/hi'
 import './Navbar.css'
 import { image } from '../../constants/images'
 function Navbar() {
   const [menuOpen, setMenuOpen] = useState(false)
   const [scrolled, setScrolled] = useState(false)
+  const [theme, setTheme] = useState('dark')
+  const [activeDropdown, setActiveDropdown] = useState(null)
+  const dropdownRef = useRef(null)
   const navId = useId()
+
+  // Close dropdown on click outside
+  useEffect(() => {
+    const handleClickOutside = (event) => {
+      if (dropdownRef.current && !dropdownRef.current.contains(event.target)) {
+        setActiveDropdown(null)
+      }
+    }
+    document.addEventListener('mousedown', handleClickOutside)
+    return () => document.removeEventListener('mousedown', handleClickOutside)
+  }, [])
 
   useEffect(() => {
     const handleScroll = () => {
@@ -18,6 +35,36 @@ function Navbar() {
 
     window.addEventListener('scroll', handleScroll)
     return () => window.removeEventListener('scroll', handleScroll)
+  }, [])
+
+  useEffect(() => {
+    const lightSections = ['how-it-works', 'features', 'contacts']
+    
+    const observerOptions = {
+      root: null,
+      rootMargin: '-80px 0px -80% 0px', // Detect what's under the navbar
+      threshold: 0
+    }
+
+    const observerCallback = (entries) => {
+      entries.forEach((entry) => {
+        if (entry.isIntersecting) {
+          if (lightSections.includes(entry.target.id)) {
+            setTheme('light')
+          } else {
+            setTheme('dark')
+          }
+        }
+      })
+    }
+
+    const observer = new IntersectionObserver(observerCallback, observerOptions)
+    
+    // Target all sections
+    const sections = document.querySelectorAll('section, .content-wrapper')
+    sections.forEach(section => observer.observe(section))
+
+    return () => observer.disconnect()
   }, [])
 
   useEffect(() => {
@@ -49,7 +96,7 @@ function Navbar() {
   }
 
   return (
-    <nav className={`navbar ${scrolled ? 'scrolled' : ''}`}>
+    <nav className={`navbar ${scrolled ? 'scrolled' : ''} ${theme}-theme`}>
       
       <div className="logo-div">
         <img src={image.safiLogo} alt="SafiCircles logo" />
@@ -76,7 +123,7 @@ function Navbar() {
         </div>
 
         <div className="nav-actions">
-          <Link to="/login" className="nav-cta-btn">
+          <Link to="" className="getstarted-btn">
             Get Started
           </Link>
         </div>
@@ -96,6 +143,40 @@ function Navbar() {
         <span className="nav-toggle-bar" />
       </button>
 
+      {/* Mobile-only compact navbar */}
+      <div className="button-container" ref={dropdownRef}>
+        <button className="button" onClick={(e) => scrollToSection(e, 'home')}>
+          <AiOutlineHome className="icon" />
+        </button>
+
+        <div className="dropdown-wrapper">
+          <button className="button" onClick={() => setActiveDropdown(activeDropdown === 'features' ? null : 'features')}>
+            <FiSearch className="icon" />
+          </button>
+          {activeDropdown === 'features' && (
+            <div className="dropdown-menu">
+              <Link to="/#features" onClick={(e) => { scrollToSection(e, 'features'); setActiveDropdown(null) }}>Features</Link>
+              <Link to="/#how-it-works" onClick={(e) => { scrollToSection(e, 'how-it-works'); setActiveDropdown(null) }}>How it works</Link>
+            </div>
+          )}
+        </div>
+
+        <div className="dropdown-wrapper">
+          <button className="button" onClick={() => setActiveDropdown(activeDropdown === 'profile' ? null : 'profile')}>
+            <HiOutlineUser className="icon" />
+          </button>
+          {activeDropdown === 'profile' && (
+            <div className="dropdown-menu">
+              <Link to="/#pricing" onClick={(e) => { scrollToSection(e, 'pricing'); setActiveDropdown(null) }}>Pricing</Link>
+              <Link to="/#contacts" onClick={(e) => { scrollToSection(e, 'contacts'); setActiveDropdown(null) }}>Contacts</Link>
+            </div>
+          )}
+        </div>
+
+        <button className="button" onClick={() => window.location.href = '/signup'}>
+          <HiOutlineShoppingCart className="icon" />
+        </button>
+      </div>
 
     </nav>
   )
