@@ -1,22 +1,18 @@
 import { Routes, Route } from 'react-router-dom'
 
 import Home from './Pages/Home'
-// import Login from './Pages/Auth/Login'
-// import SignUp from './Pages/Auth/SignUp'
-// import OTP from './Pages/Auth/OTP'
-// import Onboarding from './Pages/Onboarding/Onboarding'
-// import Dashboard from './Pages/Dashboard/Dashboard'
+import Dashboard from './Pages/Dashboard/Dashboard'
+import MyCircles from './Pages/Dashboard/MyCircles'
+import Payments from './Pages/Dashboard/Payments'
 
 function App() {
   return (
     <>
       <Routes>
         <Route path="/" element={<Home />} />
-        {/* <Route path="/login" element={<Login />} />
-        <Route path="/signup" element={<SignUp />} />
-        <Route path="/verify" element={<OTP />} />
-        <Route path="/onboarding" element={<Onboarding />} />
-        <Route path="/dashboard" element={<Dashboard />} /> */}
+        <Route path="/dashboard" element={<Dashboard />} />
+        <Route path="/circles" element={<MyCircles />} />
+        <Route path="/payments" element={<Payments />} />
       </Routes>
     </>
   )
