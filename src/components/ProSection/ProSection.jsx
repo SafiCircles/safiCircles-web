@@ -1,9 +1,11 @@
 // ProSection.jsx
 import React from "react";
+import { useNavigate } from "react-router-dom";
 import "./Prosection.css";
 import { motion } from "framer-motion";
 
 const ProSection = () => {
+  const navigate = useNavigate();
   const cardVariantsLeft = {
     hidden: { opacity: 0, x: -50 },
     visible: { opacity: 1, x: 0, transition: { duration: 0.6, ease: "easeOut" } },
@@ -77,7 +79,7 @@ const ProSection = () => {
 
             <button 
               className="card-pro-btn"
-              onClick={() => window.location.href = '/signup'}
+              onClick={() => navigate('/welcome')}
             >
               GET STARTED
             </button>
@@ -108,7 +110,7 @@ const ProSection = () => {
 
             <button 
               className="card-pro-btn light"
-              onClick={() => window.location.href = '/signup'}
+              onClick={() => navigate('/welcome')}
             >
               SUBSCRIBE
             </button>

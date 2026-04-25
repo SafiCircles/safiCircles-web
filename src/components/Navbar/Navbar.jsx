@@ -1,5 +1,5 @@
 import { useEffect, useId, useState, useRef } from 'react'
-import { Link } from 'react-router-dom'
+import { Link, useNavigate } from 'react-router-dom'
 import { AiOutlineHome } from 'react-icons/ai'
 import { FiSearch } from 'react-icons/fi'
 import { HiOutlineUser, HiOutlineShoppingCart } from 'react-icons/hi'
@@ -12,6 +12,7 @@ function Navbar() {
   const [activeDropdown, setActiveDropdown] = useState(null)
   const dropdownRef = useRef(null)
   const navId = useId()
+  const navigate = useNavigate()
 
   // Close dropdown on click outside
   useEffect(() => {
@@ -123,7 +124,7 @@ function Navbar() {
         </div>
 
         <div className="nav-actions">
-          <Link to="" className="getstarted-btn">
+          <Link to="/welcome" className="getstarted-btn">
             Get Started
           </Link>
         </div>
@@ -173,7 +174,7 @@ function Navbar() {
           )}
         </div>
 
-        <button className="button" onClick={() => window.location.href = '/signup'}>
+        <button className="button" onClick={() => navigate('/welcome')}>
           <HiOutlineShoppingCart className="icon" />
         </button>
       </div>

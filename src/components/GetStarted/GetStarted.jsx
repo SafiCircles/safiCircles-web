@@ -1,9 +1,11 @@
 import React from "react";
+import { useNavigate } from "react-router-dom";
 import "./GetStarted.css";
 import { image } from "../../constants/images";
 import { motion } from "framer-motion";
 
 const GetStarted = () => {
+  const navigate = useNavigate();
   return (
     <section className="get-started-section" id="contacts">
       {/* Top inverted half hexagon matching the ProSection style */}
@@ -35,7 +37,7 @@ const GetStarted = () => {
           <div className="cta-wrapper">
             <button 
               className="btn-get-started"
-              onClick={() => window.location.href = '/signup'}
+              onClick={() => navigate('/welcome')}
             >
               Get Started
             </button>

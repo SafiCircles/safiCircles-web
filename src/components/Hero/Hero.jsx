@@ -1,4 +1,5 @@
 import React, { useRef } from "react";
+import { useNavigate } from "react-router-dom";
 import "./Hero.css";
 import { image } from "../../constants/images";
 import { motion } from "framer-motion";
@@ -8,6 +9,7 @@ import SplitType from "split-type";
 
 function Hero() {
   const titleRef = useRef(null);
+  const navigate = useNavigate();
 
   useGSAP(
     () => {
@@ -68,7 +70,7 @@ function Hero() {
         transition={{ duration: 0.6, delay: 0.8 }}
         whileHover={{ scale: 1.05 }}
         whileTap={{ scale: 0.95 }}
-        onClick={() => window.location.href = '/signup'}
+        onClick={() => navigate('/welcome')}
       >
         Join Your Circle <span>→</span>
       </motion.button>
