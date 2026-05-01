@@ -87,7 +87,7 @@ const Dashboard = () => {
 
             <div className="circles-grid">
               {circles.map(circle => (
-                <div key={circle.id} className="circle-card">
+                <Link key={circle.id} to={`/circles/${circle.id}`} className="circle-card" style={{ textDecoration: 'none', color: 'inherit' }}>
                   <h3>{circle.name}</h3>
                   <p className="member-count">{circle.members} members</p>
                   
@@ -102,7 +102,7 @@ const Dashboard = () => {
                     <span>{circle.current.toLocaleString()}</span>
                     <span>{circle.target.toLocaleString()} RWF</span>
                   </div>
-                </div>
+                </Link>
               ))}
             </div>
           </section>
@@ -114,6 +114,7 @@ const Dashboard = () => {
             <h2>Recent Activity</h2>
             <Link to="/activity" className="view-all">View All</Link>
           </div>
+
 
           <div className="activity-list">
             {activities.map(activity => (

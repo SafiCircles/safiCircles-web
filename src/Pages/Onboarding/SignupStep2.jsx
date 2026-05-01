@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import { useNavigate } from 'react-router-dom';
 import OnboardingLayout from './OnboardingLayout';
 import { image } from '../../constants/images';
@@ -6,6 +6,15 @@ import { image } from '../../constants/images';
 const SignupStep2 = () => {
   const navigate = useNavigate();
   const [provider, setProvider] = useState('MTN MoMo');
+  const [paymentPhone, setPaymentPhone] = useState('');
+
+  useEffect(() => {
+    // Autofill phone from Step 1
+    const storedPhone = localStorage.getItem('userPhone');
+    if (storedPhone) {
+      setPaymentPhone(storedPhone);
+    }
+  }, []);
 
   return (
     <OnboardingLayout>
@@ -17,7 +26,7 @@ const SignupStep2 = () => {
         </div>
       </div>
 
-      <p className="step-title">Welcome! Lets get you signed up</p>
+      <p className="step-title">Welcome! Let's get you signed up</p>
 
       <div className="onboarding-form">
         <div className="input-container">
@@ -27,6 +36,17 @@ const SignupStep2 = () => {
           <input type="text" placeholder="National ID" className="input-field" />
         </div>
         
+        <div className="input-container">
+          <label className="provider-label" style={{ display: 'block', marginBottom: '8px' }}>Payment Phone Number</label>
+          <input 
+            type="tel" 
+            placeholder="Payment Phone Number" 
+            className="input-field" 
+            value={paymentPhone}
+            onChange={(e) => setPaymentPhone(e.target.value)}
+          />
+        </div>
+
         <p className="provider-label">Mobile Money Provider</p>
         <div className="provider-row">
           <div 
@@ -48,7 +68,7 @@ const SignupStep2 = () => {
         </button>
       </div>
 
-      <div className="progress-footer">
+      <div className="progress-footer onboarding-footer-spacer">
         <div className="progress-segment filled"></div>
         <div className="progress-segment filled"></div>
         <div className="progress-segment"></div>
@@ -58,3 +78,4 @@ const SignupStep2 = () => {
 };
 
 export default SignupStep2;
+

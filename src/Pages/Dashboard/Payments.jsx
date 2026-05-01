@@ -1,4 +1,5 @@
-import React from 'react';
+import React, { useState, useEffect } from 'react';
+import { Link } from 'react-router-dom';
 import { 
   MdSearch,
   MdOutlineSmartphone
@@ -12,6 +13,18 @@ import DashboardLayout from './DashboardLayout';
 import './Dashboard.css';
 
 const Payments = () => {
+  const [userPhone, setUserPhone] = useState('+250 780 603 033'); // Default mock
+
+  useEffect(() => {
+    const storedPhone = localStorage.getItem('userPhone');
+    if (storedPhone) {
+      // Simple formatting for display: +250780000000 -> +250 780 000 000
+      const code = storedPhone.slice(0, 4);
+      const rest = storedPhone.slice(4);
+      setUserPhone(`${code} ${rest.replace(/(\d{3})(\d{3})(\d{3})/, '$1 $2 $3').trim()}`);
+    }
+  }, []);
+
   const contributions = [
     { id: 1, circle: 'Family Savings', date: 'Mar 20', dueDate: 'Due in 5d', status: 'NOT PAID', amount: '10, 000 RWF', method: '' },
     { id: 2, circle: 'Tech Workers', date: 'Mar 18', dueDate: 'Overdue', status: 'NOT PAID', amount: '20, 000 RWF', method: '' },
@@ -59,24 +72,25 @@ const Payments = () => {
           <div className="payment-methods-card">
             <h3>Payment Methods</h3>
             
-            <div className="method-item">
+            <Link to="/payments/card" className="method-item" style={{ textDecoration: 'none', color: 'inherit' }}>
               <HiOutlineCreditCard className="method-icon" />
               <div className="method-details">
                 <p className="method-name">Mastercard</p>
                 <p className="method-meta">**** **** 4242 | Expires 12/28</p>
               </div>
               <span className="primary-badge">Primary</span>
-            </div>
+            </Link>
 
-            <div className="method-item primary">
+            <Link to="/payments/momo" className="method-item primary" style={{ textDecoration: 'none', color: 'inherit' }}>
               <MdOutlineSmartphone className="method-icon" />
               <div className="method-details">
                 <p className="method-name">MTN MoMo</p>
-                <p className="method-meta">+250 780 603 033</p>
+                <p className="method-meta">{userPhone}</p>
               </div>
               <span className="primary-badge">Primary</span>
-            </div>
+            </Link>
           </div>
+
         </div>
 
         <section className="contributions-card">
@@ -139,3 +153,4 @@ const Payments = () => {
 };
 
 export default Payments;
+

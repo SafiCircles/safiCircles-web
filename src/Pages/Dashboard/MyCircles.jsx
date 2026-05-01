@@ -1,5 +1,5 @@
 import React from 'react';
-import { Link } from 'react-router-dom';
+import { Link, useNavigate } from 'react-router-dom';
 import { 
   MdSearch,
   MdAdd
@@ -8,12 +8,14 @@ import {
   HiOutlineLockClosed,
   HiOutlineGlobeAlt,
   HiOutlineArrowDownLeft,
-  HiOutlineUserGroup
+  HiOutlineUserGroup,
+  HiOutlineArrowRight
 } from 'react-icons/hi2';
 import DashboardLayout from './DashboardLayout';
 import './Dashboard.css';
 
 const MyCircles = () => {
+  const navigate = useNavigate();
   const myCircles = [
     { id: 1, name: 'Family Savings', creator: 'Sandra Kimberly', members: 8, current: 45000, target: 80000, type: 'locked' },
     { id: 2, name: 'Tech Workers', creator: 'John Doe', members: 8, current: 45000, target: 80000, type: 'globe' },
@@ -34,20 +36,37 @@ const MyCircles = () => {
             <MdSearch className="search-icon" />
             <input 
               type="text" 
-              placeholder="Search circles, security features, ..." 
+              placeholder="Search circles..." 
               className="search-input"
             />
           </div>
         </header>
 
         <section className="greeting-section">
-          <h1>My Circles</h1>
-          <p>The circles ( Ikibina ) you are apart of and the ones you can join</p>
+          <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'flex-end' }}>
+            <div>
+              <h1>My Circles</h1>
+              <p>The circles ( Ikibina ) you are apart of and the ones you can join</p>
+            </div>
+            <div style={{ display: 'flex', gap: '1rem' }}>
+              <Link to="/circles/public" className="back-btn" style={{ margin: 0, background: '#e8f0fe', borderColor: '#5A8FCC', color: '#5A8FCC' }}>
+                <HiOutlineGlobeAlt /> Browse Public
+              </Link>
+              <Link to="/circles/join-private" className="back-btn" style={{ margin: 0 }}>
+                <HiOutlineLockClosed /> Join Private
+              </Link>
+            </div>
+          </div>
         </section>
 
         <div className="circles-grid">
           {myCircles.map(circle => (
-            <div key={circle.id} className="circle-card" style={{ padding: 0, overflow: 'hidden' }}>
+            <Link 
+              key={circle.id} 
+              to={`/circles/${circle.id}`} 
+              className="circle-card" 
+              style={{ padding: 0, overflow: 'hidden', textDecoration: 'none', color: 'inherit' }}
+            >
               <div className="circle-header-card">
                 {circle.type === 'locked' ? <HiOutlineLockClosed /> : <HiOutlineGlobeAlt />}
               </div>
@@ -73,11 +92,14 @@ const MyCircles = () => {
                   <span>{circle.target.toLocaleString()} RWF</span>
                 </div>
               </div>
-            </div>
+            </Link>
           ))}
 
           {/* Create New Circle Card */}
-          <div className="circle-card create-circle-card">
+          <div 
+            className="circle-card create-circle-card" 
+            onClick={() => navigate('/circles/create')}
+          >
             <MdAdd className="plus-icon" />
             <h3>Create New Circle</h3>
             <p className="member-count">Start a new trust network</p>
@@ -85,7 +107,10 @@ const MyCircles = () => {
         </div>
 
         <section style={{ marginTop: '3rem' }}>
-          <h2>Recent Circle Activities</h2>
+          <div className="section-header">
+            <h2>Recent Circle Activities</h2>
+            <Link to="/activity" className="view-all">View All</Link>
+          </div>
           <div className="activities-horizontal">
             {recentActivities.map(activity => (
               <div key={activity.id} className="activity-item horizontal-activity">
@@ -109,3 +134,4 @@ const MyCircles = () => {
 };
 
 export default MyCircles;
+

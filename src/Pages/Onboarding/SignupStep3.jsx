@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useState } from 'react';
 import { useNavigate } from 'react-router-dom';
 import OnboardingLayout from './OnboardingLayout';
 import { image } from '../../constants/images';
@@ -6,6 +6,16 @@ import { FaCheck, FaTimes } from 'react-icons/fa';
 
 const SignupStep3 = () => {
   const navigate = useNavigate();
+  const [pass, setPass] = useState('');
+  const [confirm, setConfirm] = useState('');
+
+  const rules = [
+    { label: 'At least 8 characters', valid: pass.length >= 8 },
+    { label: 'One uppercase letter', valid: /[A-Z]/.test(pass) },
+    { label: 'One number or symbol', valid: /[0-9!@#$%^&*]/.test(pass) },
+  ];
+
+  const allValid = rules.every(r => r.valid) && pass === confirm && pass !== '';
 
   return (
     <OnboardingLayout>
@@ -17,34 +27,49 @@ const SignupStep3 = () => {
         </div>
       </div>
 
-      <p className="step-title">Welcome! Lets get you signed up</p>
+      <p className="step-title">Welcome! Let's get you signed up</p>
 
       <div className="onboarding-form">
         <div className="input-container">
-          <input type="password" placeholder="Create password" className="input-field" />
+          <input 
+            type="password" 
+            placeholder="Create password" 
+            className="input-field" 
+            value={pass}
+            onChange={e => setPass(e.target.value)}
+          />
         </div>
         <div className="input-container">
-          <input type="password" placeholder="Confirm Password" className="input-field" />
+          <input 
+            type="password" 
+            placeholder="Confirm Password" 
+            className="input-field" 
+            value={confirm}
+            onChange={e => setConfirm(e.target.value)}
+          />
         </div>
         
         <div className="validation-list">
-          <div className="validation-item">
-            <FaCheck className="validation-icon" /> At least 8 characters
-          </div>
-          <div className="validation-item">
-            <FaCheck className="validation-icon" /> One uppercase letter
-          </div>
-          <div className="validation-item">
-            <FaTimes className="validation-icon" /> One number or symbol
-          </div>
+          {rules.map((r, i) => (
+            <div key={i} className="validation-item">
+              {r.valid ? <FaCheck className="validation-icon" /> : <FaTimes className="validation-icon" />}
+              {r.label}
+            </div>
+          ))}
+          {pass !== confirm && confirm !== '' && (
+            <div className="validation-item" style={{ color: '#ffb3b3' }}>
+              <FaTimes className="validation-icon" /> Passwords do not match
+            </div>
+          )}
         </div>
 
-        <button className="btn-primary" onClick={() => navigate('/dashboard')}>
+        <button className="btn-primary" onClick={() => navigate('/dashboard')} disabled={!allValid}>
           CONTINUE
         </button>
       </div>
 
-      <div className="progress-footer">
+
+      <div className="progress-footer onboarding-footer-spacer">
         <div className="progress-segment filled"></div>
         <div className="progress-segment filled"></div>
         <div className="progress-segment filled"></div>
