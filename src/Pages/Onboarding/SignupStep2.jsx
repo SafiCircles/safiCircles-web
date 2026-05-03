@@ -1,4 +1,5 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState } from 'react';
+
 import { useNavigate } from 'react-router-dom';
 import OnboardingLayout from './OnboardingLayout';
 import { image } from '../../constants/images';
@@ -6,15 +7,8 @@ import { image } from '../../constants/images';
 const SignupStep2 = () => {
   const navigate = useNavigate();
   const [provider, setProvider] = useState('MTN MoMo');
-  const [paymentPhone, setPaymentPhone] = useState('');
+  const [paymentPhone, setPaymentPhone] = useState(() => localStorage.getItem('userPhone') || '');
 
-  useEffect(() => {
-    // Autofill phone from Step 1
-    const storedPhone = localStorage.getItem('userPhone');
-    if (storedPhone) {
-      setPaymentPhone(storedPhone);
-    }
-  }, []);
 
   return (
     <OnboardingLayout>
