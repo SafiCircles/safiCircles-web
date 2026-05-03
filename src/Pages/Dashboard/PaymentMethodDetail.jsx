@@ -1,4 +1,5 @@
-import React, { useState, useEffect } from 'react';
+import React from 'react';
+
 import { useNavigate, useParams, Link } from 'react-router-dom';
 import { 
   MdArrowBack, 
@@ -16,11 +17,9 @@ import './Payments.css';
 const PaymentMethodDetail = () => {
   const { type } = useParams(); // 'card' or 'momo'
   const navigate = useNavigate();
-  const [method, setMethod] = useState(null);
-
-  useEffect(() => {
+  const method = React.useMemo(() => {
     if (type === 'card') {
-      setMethod({
+      return {
         id: 1,
         name: 'Mastercard',
         icon: <MdOutlineCreditCard />,
@@ -31,10 +30,10 @@ const PaymentMethodDetail = () => {
           { date: 'May 01, 2026', amount: '10,000 RWF', status: 'Success', desc: 'Family Savings' },
           { date: 'Apr 15, 2026', amount: '20,000 RWF', status: 'Success', desc: 'Tech Workers' },
         ]
-      });
+      };
     } else {
       const storedPhone = localStorage.getItem('userPhone') || '+250 780 603 033';
-      setMethod({
+      return {
         id: 2,
         name: 'MTN MoMo',
         icon: <MdOutlineSmartphone />,
@@ -45,9 +44,10 @@ const PaymentMethodDetail = () => {
           { date: 'May 01, 2026', amount: '5,000 RWF', status: 'Success', desc: 'Neighborhood' },
           { date: 'Apr 20, 2026', amount: '30,000 RWF', status: 'Success', desc: 'Classroom 85' },
         ]
-      });
+      };
     }
   }, [type]);
+
 
   if (!method) return null;
 

@@ -1,4 +1,3 @@
-<<<<<<< HEAD
 // src/constants/images.js
 import ai from '@/images/ai.png';
 import contribution from '@/images/contribution.png';
@@ -34,41 +33,4 @@ export const image = {
   ussd,
   safiLogo,
   sandraProfile
-=======
-// src/constants/images.js
-import ai from '@/images/ai.png';
-import contribution from '@/images/contribution.png';
-import group from '@/images/group.png';
-import hands from '@/images/hands.jpg';
-import multilingual from '@/images/multilingual.png';
-import notification from '@/images/notification.png';
-import offline from '@/images/offline.png';
-import pair from '@/images/pair.png';
-import timer from '@/images/timer.png';
-import ussd from '@/images/ussd.png';
-import safiLogo from '@/images/SafiLogo.png';
-import sandraProfile from '@/images/sandra_profile.png';
-import Footprints from '@/images/footprints.png';
-import Arrow from '@/images/arrow.png';
-import Union from '@/images/union.png';
-import PeopleOnCircle from '@/images/peopleOnCircle.png';
-
-export const image = {
-  ai,
-  contribution,
-  Footprints,
-  Arrow,
-  group,
-  hands,
-  multilingual,
-  notification,
-  offline,
-  pair,
-  Union,
-  PeopleOnCircle,
-  timer,
-  ussd,
-  safiLogo,
-  sandraProfile
->>>>>>> c8e57c2da76ec770fc85200eb5067df3cbd76c97
 };
