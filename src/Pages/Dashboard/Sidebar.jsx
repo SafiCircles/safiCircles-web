@@ -1,13 +1,13 @@
 import React from 'react';
 import { Link, useLocation } from 'react-router-dom';
-import { 
-  MdDashboard, 
-  MdOutlinePayments, 
-  MdHelpOutline 
+import {
+  MdDashboard,
+  MdOutlinePayments,
+  MdHelpOutline
 } from 'react-icons/md';
-import { 
-  HiOutlineUsers, 
-  HiOutlineUser 
+import {
+  HiOutlineUsers,
+  HiOutlineUser
 } from 'react-icons/hi2';
 import { image } from '../../constants/images';
 import './Dashboard.css';
@@ -28,7 +28,7 @@ const Sidebar = () => {
           </span>
         </Link>
       </div>
-      
+
       <nav className="sidebar-nav">
         <Link to="/dashboard" className={`nav-item ${isActive('/dashboard') ? 'active' : ''}`}>
           <MdDashboard className="nav-icon" />

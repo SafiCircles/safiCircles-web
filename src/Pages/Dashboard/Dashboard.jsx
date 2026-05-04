@@ -37,17 +37,6 @@ const Dashboard = () => {
       <div style={{ display: 'flex', flex: 1 }}>
         {/* Main Content */}
         <main className="dashboard-main">
-          <header className="top-bar">
-            <div className="search-wrapper">
-              <MdSearch className="search-icon" />
-              <input 
-                type="text" 
-                placeholder="Search circles, security features, ..." 
-                className="search-input"
-              />
-            </div>
-          </header>
-
           <section className="greeting-section">
             <h1>Good morning, Sandra.</h1>
             <p>Your own digital ikibina management system with all the feature you need.</p>

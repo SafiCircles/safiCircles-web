@@ -116,7 +116,7 @@
 }
 
 .faq-item {
-  background: white;
+  background: var(--card-bg);
   border-radius: 14px;
   border: 1px solid var(--border-color);
   overflow: hidden;
@@ -191,7 +191,7 @@
   text-decoration: none;
   color: var(--text-main);
   border: 1px solid var(--border-color);
-  background: white;
+  background: var(--card-bg);
   transition: transform 0.2s, box-shadow 0.2s;
   cursor: pointer;
 }

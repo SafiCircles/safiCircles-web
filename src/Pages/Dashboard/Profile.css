@@ -112,7 +112,7 @@
 
 /* Profile Card */
 .profile-card {
-  background: white;
+  background: var(--card-bg);
   border-radius: 20px;
   padding: 2rem;
   box-shadow: var(--shadow-subtle);
@@ -213,7 +213,7 @@
 
 .profile-input:focus {
   border-color: var(--accent-color);
-  background: white;
+  background: var(--card-bg);
   box-shadow: 0 0 0 3px rgba(90, 143, 204, 0.1);
 }
 
@@ -249,7 +249,7 @@
   top: calc(100% + 8px);
   left: 0;
   z-index: 500;
-  background: white;
+  background: var(--card-bg);
   border-radius: 14px;
   box-shadow: 0 8px 30px rgba(0,0,0,0.15);
   padding: 1rem;
@@ -289,7 +289,7 @@
   font-size: 0.85rem;
   outline: none;
   cursor: pointer;
-  background: white;
+  background: var(--card-bg);
 }
 
 .datepicker-grid {
@@ -342,7 +342,7 @@
   padding: 0.75rem 0.75rem;
   cursor: pointer;
   border-right: 1.5px solid var(--border-color);
-  background: white;
+  background: var(--card-bg);
   font-size: 0.9rem;
   font-weight: 600;
   white-space: nowrap;
@@ -368,7 +368,7 @@
   top: calc(100% + 6px);
   left: 0;
   z-index: 600;
-  background: white;
+  background: var(--card-bg);
   border-radius: 12px;
   box-shadow: 0 8px 30px rgba(0,0,0,0.15);
   border: 1px solid var(--border-color);
@@ -504,7 +504,7 @@
   position: absolute;
   height: 18px; width: 18px;
   left: 3px; bottom: 3px;
-  background: white;
+  background: var(--card-bg);
   border-radius: 50%;
   transition: 0.3s;
 }

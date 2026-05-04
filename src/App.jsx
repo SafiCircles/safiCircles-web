@@ -16,6 +16,11 @@ import Welcome from './Pages/Onboarding/Welcome'
 import SignupStep1 from './Pages/Onboarding/SignupStep1'
 import SignupStep2 from './Pages/Onboarding/SignupStep2'
 import SignupStep3 from './Pages/Onboarding/SignupStep3'
+import SuperAdminDashboard from './Pages/SuperAdmin/SuperAdminDashboard'
+import SuperAdminSettings from './Pages/SuperAdmin/SuperAdminSettings'
+import SuperAdminProfile from './Pages/SuperAdmin/SuperAdminProfile'
+import SuperAdminCircles from './Pages/SuperAdmin/SuperAdminCircles'
+import SuperAdminUsers from './Pages/SuperAdmin/SuperAdminUsers'
 
 function App() {
   return (
@@ -37,6 +42,14 @@ function App() {
         <Route path="/profile" element={<Profile />} />
         <Route path="/help" element={<Help />} />
         <Route path="/activity" element={<Activities />} />
+        {/* Super Admin Routes */}
+        <Route path="/admin" element={<SuperAdminDashboard />} />
+        <Route path="/admin/settings" element={<SuperAdminSettings />} />
+        <Route path="/admin/profile" element={<SuperAdminProfile />} />
+        <Route path="/admin/circles" element={<SuperAdminCircles />} />
+        <Route path="/admin/users" element={<SuperAdminUsers />} />
+        <Route path="/admin/analytics" element={<SuperAdminDashboard />} />
+
       </Routes>
     </>
   )
