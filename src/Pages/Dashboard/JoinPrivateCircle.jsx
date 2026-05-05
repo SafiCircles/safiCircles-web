@@ -41,12 +41,6 @@ const JoinPrivateCircle = () => {
   return (
     <DashboardLayout>
       <main className="dashboard-main">
-        <header className="top-bar">
-          <div className="search-wrapper">
-            <MdSearch className="search-icon" />
-            <input type="text" placeholder="Search..." className="search-input" />
-          </div>
-        </header>
 
         <button className="back-btn" onClick={() => navigate('/circles')}>
           <MdArrowBack /> Back to Circles

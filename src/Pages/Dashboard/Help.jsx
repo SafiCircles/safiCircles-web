@@ -64,12 +64,6 @@ const Help = () => {
   return (
     <DashboardLayout>
       <main className="dashboard-main">
-        <header className="top-bar">
-          <div className="search-wrapper">
-            <MdSearch className="search-icon" />
-            <input type="text" placeholder="Search help articles..." className="search-input" />
-          </div>
-        </header>
 
         {/* Hero */}
         <div className="help-hero">

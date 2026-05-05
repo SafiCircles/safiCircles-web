@@ -54,12 +54,6 @@ const PaymentMethodDetail = () => {
   return (
     <DashboardLayout>
       <main className="dashboard-main">
-        <header className="top-bar">
-          <div className="search-wrapper">
-            <MdSearch className="search-icon" />
-            <input type="text" placeholder="Search transactions..." className="search-input" />
-          </div>
-        </header>
 
         <button className="back-btn" onClick={() => navigate('/payments')}>
           <MdArrowBack /> Back to Payments

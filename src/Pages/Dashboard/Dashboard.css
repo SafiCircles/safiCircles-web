@@ -22,44 +22,6 @@
   --header-card-bg: #dbeafe;
 }
 
-[data-theme='dark'],
-.dark-mode {
-  --bg-color: #0b132b;
-  --sidebar-bg: #131d36;
-  --card-bg: #1c2541;
-  --dark-card-bg: #2a3b5c;
-  --text-main: #f8f9fa;
-  --text-muted: #a0aec0;
-  --border-color: #2d3748;
-  
-  --hover-bg: #2a3b5c;
-  --active-bg: #3a506b;
-  --search-bg: #131d36;
-  --icon-bg-received: #1c3254;
-  --icon-bg-sent: #2d3748;
-  --icon-color-sent: #a0aec0;
-  --header-card-bg: #1c3254;
-}
-
-@media (prefers-color-scheme: dark) {
-  :root:not([data-theme='light']) {
-    --bg-color: #0b132b;
-    --sidebar-bg: #131d36;
-    --card-bg: #1c2541;
-    --dark-card-bg: #2a3b5c;
-    --text-main: #f8f9fa;
-    --text-muted: #a0aec0;
-    --border-color: #2d3748;
-    
-    --hover-bg: #2a3b5c;
-    --active-bg: #3a506b;
-    --search-bg: #131d36;
-    --icon-bg-received: #1c3254;
-    --icon-bg-sent: #2d3748;
-    --icon-color-sent: #a0aec0;
-    --header-card-bg: #1c3254;
-  }
-}
 
 .dashboard-container {
   display: flex;

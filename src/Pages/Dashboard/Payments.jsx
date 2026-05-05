@@ -38,16 +38,6 @@ const Payments = () => {
   return (
     <DashboardLayout>
       <main className="dashboard-main">
-        <header className="top-bar">
-          <div className="search-wrapper">
-            <MdSearch className="search-icon" />
-            <input 
-              type="text" 
-              placeholder="Search circles, security features, ..." 
-              className="search-input"
-            />
-          </div>
-        </header>
 
         <section className="greeting-section">
           <h1>Contributions</h1>

@@ -55,12 +55,6 @@ const CreateCircle = () => {
   return (
     <DashboardLayout>
       <main className="dashboard-main">
-        <header className="top-bar">
-          <div className="search-wrapper">
-            <MdSearch className="search-icon" />
-            <input type="text" placeholder="Search..." className="search-input" />
-          </div>
-        </header>
 
         <button className="back-btn" onClick={() => step > 1 ? prevStep() : navigate('/circles')}>
           <MdArrowBack /> {step > 1 ? 'Previous Step' : 'Back to Circles'}

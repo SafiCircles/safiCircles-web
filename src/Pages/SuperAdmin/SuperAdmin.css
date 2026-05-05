@@ -20,36 +20,6 @@
   --admin-search-bg: #eeeeee;
 }
 
-[data-theme='dark'],
-.dark-mode {
-  --admin-bg: #0b132b;
-  --admin-sidebar-bg: #131d36;
-  --admin-card-bg: #1c2541;
-  --admin-dark-card-bg: #2a3b5c;
-  --admin-text-main: #f8f9fa;
-  --admin-text-muted: #a0aec0;
-  --admin-border: #2d3748;
-  
-  --admin-hover-bg: #2a3b5c;
-  --admin-active-bg: #3a506b;
-  --admin-search-bg: #131d36;
-}
-
-@media (prefers-color-scheme: dark) {
-  :root:not([data-theme='light']) {
-    --admin-bg: #0b132b;
-    --admin-sidebar-bg: #131d36;
-    --admin-card-bg: #1c2541;
-    --admin-dark-card-bg: #2a3b5c;
-    --admin-text-main: #f8f9fa;
-    --admin-text-muted: #a0aec0;
-    --admin-border: #2d3748;
-    
-    --admin-hover-bg: #2a3b5c;
-    --admin-active-bg: #3a506b;
-    --admin-search-bg: #131d36;
-  }
-}
 
 .admin-container {
   display: flex;

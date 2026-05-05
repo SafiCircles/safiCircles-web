@@ -31,16 +31,6 @@ const MyCircles = () => {
   return (
     <DashboardLayout>
       <main className="dashboard-main">
-        <header className="top-bar">
-          <div className="search-wrapper">
-            <MdSearch className="search-icon" />
-            <input 
-              type="text" 
-              placeholder="Search circles..." 
-              className="search-input"
-            />
-          </div>
-        </header>
 
         <section className="greeting-section">
           <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'flex-end' }}>
